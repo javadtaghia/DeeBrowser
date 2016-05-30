@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
+    <item
+        android:id="@+id/action_new_tab"
+        android:title="@string/action_incognito_new"/>
+
+    <item
+        android:id="@+id/action_reading_modezew"
+        android:title="\u221E  DeeReader" />
+
+    <item
+        android:id="@+id/action_reading_mode"
+        android:title="@string/reading_mode"/>
+
+    <item
+        android:id="@+id/action_offline"
+        android:title="@string/offlinesave"/>
+    <item
+        android:id="@+id/action_bookmarks"
+        android:title="@string/action_bookmarks"/>
+
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/action_history"/>
+
+
+
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/action_share"/>
+
+    <item
+        android:id="@+id/action_find"
+        android:title="@string/action_find"/>
+
+
+
+    <item
+        android:id="@+id/finish"
+        android:title="\u2716 Exit"/>
+
+
+
+
+</menu>

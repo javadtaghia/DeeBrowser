@@ -1,0 +1,319 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".FullscreenActivity"
+    android:id="@+id/overlayer">
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="?toolbarSettingsBackground"-->
+    <!--android:elevation="2dp"-->
+    <!--android:minHeight="?attr/actionBarSize"/>-->
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#000000"
+        android:textStyle="bold" android:textSize="50dp" android:gravity="center"
+        android:text=""
+        android:shadowColor="#000000"
+        android:background="@color/white" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp">
+
+
+                    <Button android:id="@+id/pPlay" style="?metaButtonBarButtonStyle"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:drawableBottom="@android:drawable/ic_media_play"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="5dp" />
+
+                    <Button android:id="@+id/browse" style="?metaButtonBarButtonStyle"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:drawableBottom="@android:drawable/ic_menu_add"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignLeft="@+id/zewbrowser"
+                        android:layout_alignStart="@+id/zewbrowser"
+                        android:layout_marginTop="0dp" />
+
+                    <Button android:id="@+id/zewbrowser" style="?metaButtonBarButtonStyle"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:drawableBottom="@android:drawable/ic_menu_set_as"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="35dp"
+                        android:visibility="invisible"
+                        android:layout_marginTop="5dp" />
+
+
+
+                    <Button
+
+                        android:id="@+id/textcolor"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@color/black"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/pPlay"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="0dp" />
+
+                    <Button
+                        android:id="@+id/backcolor"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/browse"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/textcolor2" />
+
+                    <Button
+                        android:id="@+id/textcolor2"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@color/black"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/textcolor"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="0dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="#"
+                        android:id="@+id/textView3"
+                        android:layout_marginLeft="15dp"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/error_red" />
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekword"
+                        android:indeterminate="false"
+                        android:layout_toRightOf="@+id/textView3"
+                        android:layout_marginRight="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="1"
+                        android:id="@+id/textword"
+                        android:layout_marginLeft="0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/error_red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="D"
+                        android:id="@+id/textView4"
+                        android:layout_marginLeft="12dp"
+                        android:layout_alignParentLeft="true"
+                        android:elevation="2dp"
+                        android:textColor="@color/error_red" />
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekspeed"
+                        android:indeterminate="false"
+                        android:layout_toRightOf="@+id/textView4"
+                        android:layout_marginRight="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="400"
+                        android:id="@+id/textdelay"
+                        android:layout_marginLeft="0dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/error_red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="F"
+                        android:id="@+id/textView"
+                        android:layout_marginLeft="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:elevation="2dp"
+                        android:textColor="@color/error_red" />
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekfont"
+                        android:indeterminate="false"
+                        android:layout_toRightOf="@+id/textView"
+                        android:layout_marginRight="20dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="S"
+                        android:id="@+id/textView2"
+                        android:layout_marginLeft="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="false"
+                        android:layout_marginBottom="0dp"
+                        android:elegantTextHeight="false"
+                        android:elevation="2dp"
+                        android:shadowColor="@color/white"
+                        android:textColor="@color/error_red" />
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekBar"
+                        android:indeterminate="false"
+                        android:layout_toRightOf="@+id/textView2"
+                        android:layout_alignParentBottom="false"
+                        android:layout_marginRight="20dp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/hidText"
+            android:layout_gravity="left|top"
+            android:visibility="invisible" />
+
+        <ViewFlipper
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewFlipper" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/progressBar"
+            android:layout_gravity="right|top"
+            android:theme="@style/AppTheme"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            style="?actionMenuTextAppearance"
+            android:id="@+id/progressval"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:textColor="@color/error_red"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/minusw"
+            android:layout_toRightOf="@+id/plus"
+            android:layout_toEndOf="@+id/plus"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="0dp"
+            android:textAlignment="center" />
+
+        <Button
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="38dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/buttonm"
+
+            android:layout_gravity="left|top"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <Button
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
+        android:id="@+id/buttonp"
+
+        android:layout_gravity="right|top"
+        android:visibility="visible" />
+
+</FrameLayout>
+
+
